@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Montagna Che Portiamo Dentro — Un viaggio tra le vette delle Ande e i sentieri dell'anima</title>
+<meta name="description" content="La Montagna Che Portiamo Dentro. Un libro-viaggio tra le vette delle Ande e i sentieri dell'anima. Scopri i capitoli, la galleria e l'autore.">
+<meta property="og:title" content="La Montagna Che Portiamo Dentro">
+<meta property="og:description" content="Un viaggio tra le vette delle Ande e i sentieri dell'anima.">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.shamanictravels.com/la-montagna-che-portiamo-dentro">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "La Montagna Che Portiamo Dentro",
+  "url": "https://www.shamanictravels.com/la-montagna-che-portiamo-dentro",
+  "alternateName": "Un viaggio tra le vette delle Ande e i sentieri dell'anima",
+  "inLanguage": "it",
+  "author": { "@type": "Person", "name": "Marcello" }
+}
+</script>
+<style>
+
+/* ============ DESIGN TOKENS ============ */
+:root{
+  /* color */
+  --ochre:        oklch(0.60 0.13 240);
+  --ochre-dim:     oklch(0.60 0.13 240 / 0.35);
+  --terracotta:   oklch(0.50 0.14 255);
+  --stone:        oklch(0.88 0.02 70);
+  --slate:        oklch(0.32 0.03 250);
+  --charcoal:     oklch(0.16 0.01 60);
+  --gold:         oklch(0.72 0.09 220);
+  --teal:         oklch(0.55 0.05 200);
+  --ivory:        oklch(0.97 0.01 80);
+  --parchment:    oklch(0.95 0.018 75);
+  --mist:         oklch(0.93 0.012 230);
+
+  --ink: var(--charcoal);
+  --paper: var(--ivory);
+
+  /* type */
+  --display: 'Playfair Display', Georgia, serif;
+  --body: 'Inter', -apple-system, sans-serif;
+
+  /* spacing */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+  --space-6: 8rem;
+  --space-7: 12rem;
+
+  --radius-s: 2px;
+  --radius-m: 3px;
+  --container: 1240px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 150ms;
+  --dur-med: 400ms;
+  --dur-slow: 600ms;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+html{ scroll-behavior: smooth; }
+body{
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img{ display:block; max-width:100%; }
+a{ color: inherit; text-decoration:none; }
+h1,h2,h3{ font-family: var(--display); font-weight: 600; letter-spacing: -0.01em; line-height: 1.12; }
+
+.container{ max-width: var(--container); margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+.eyebrow{
+  font-family: var(--body); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ochre); font-weight: 600;
+}
+.section{ padding: var(--space-6) 0; position: relative; }
+.section-tight{ padding: var(--space-5) 0; }
+
+/* focus visibility */
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+  border-radius: var(--radius-s);
+}
+
+/* reveal */
+.reveal{ opacity: 0; transform: translateY(28px); transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease); }
+.reveal.in{ opacity: 1; transform: translateY(0); }
+
+/* ============ NAV ============ */
+.nav{
+  position: fixed; top:0; left:0; right:0; z-index: 200;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 1.35rem clamp(1.25rem, 4vw, 3rem);
+  transition: background var(--dur-med) var(--ease), padding var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
+}
+.nav.scrolled{
+  background: color-mix(in oklch, var(--ivory) 92%, transparent);
+  backdrop-filter: blur(10px);
+  padding: 0.85rem clamp(1.25rem, 4vw, 3rem);
+  box-shadow: 0 1px 0 var(--stone);
+}
+.logo{ display:flex; align-items:center; gap:.6rem; }
+.logo svg{ width: 30px; height: 30px; }
+.logo-img{ width: 34px; height: 34px; object-fit: contain; }
+.logo-word{ font-family: var(--display); font-size: 0.92rem; letter-spacing: 0.02em; display:none; }
+@media(min-width:900px){ .logo-word{ display:inline; } }
+
+.nav-links{ display:none; align-items:center; gap: var(--space-4); }
+.nav-links a{
+  font-size: 0.82rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--slate);
+  position: relative; padding-bottom: 4px;
+}
+.nav-links a::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:1px; background: var(--ochre);
+  transform: scaleX(0); transform-origin: left; transition: transform var(--dur-fast) var(--ease);
+}
+.nav-links a:hover::after{ transform: scaleX(1); }
+.nav-links a.cta-link{
+  color: var(--ivory); background: var(--charcoal); padding: 0.6rem 1.3rem; text-transform: uppercase;
+  letter-spacing: 0.1em; font-size: 0.72rem; border-radius: 0; transition: background var(--dur-fast) var(--ease);
+}
+.nav-links a.cta-link:hover{ background: var(--ochre); }
+.nav-links a.cta-link::after{ display:none; }
+@media(min-width:1000px){ .nav-links{ display:flex; } }
+
+.menu-btn{ display:flex; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding: 6px; }
+@media(min-width:1000px){ .menu-btn{ display:none; } }
+.menu-btn span{ width:22px; height:1px; background: var(--charcoal); transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease); }
+
+.mobile-menu{
+  position: fixed; inset:0; background: var(--ivory); z-index: 190;
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap: var(--space-3);
+  padding: 0 clamp(1.5rem, 8vw, 4rem);
+  transform: translateY(-100%); transition: transform var(--dur-med) var(--ease);
+}
+.mobile-menu.open{ transform: translateY(0); }
+.mobile-menu a{ font-family: var(--display); font-size: 2rem; color: var(--charcoal); }
+
+/* ============ HERO ============ */
+.hero{
+  position: relative; min-height: 100svh; display:flex; align-items:flex-end;
+  overflow:hidden;
+}
+.hero-media{ position:absolute; inset:0; }
+.hero-media img{ width:100%; height:100%; object-fit:cover; transform: scale(1.06); }
+.hero-media::after{
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(20,16,12,0.12) 0%, rgba(20,16,12,0.06) 45%, rgba(18,14,10,0.55) 100%);
+}
+.hero-content{
+  position:relative; z-index:2; width:100%;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) var(--space-6);
+  color: var(--ivory);
+}
+.hero-eyebrow{ font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--space-2); font-weight: 600; }
+.hero h1{
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  text-transform: uppercase; letter-spacing: 0.01em; max-width: 14ch;
+}
+.hero-sub{
+  font-family: var(--display); font-style: italic; font-weight: 400;
+  font-size: clamp(1.05rem, 1.7vw, 1.5rem);
+  margin-top: var(--space-3); max-width: 34ch; color: color-mix(in oklch, var(--ivory) 88%, transparent);
+}
+.hero-ctas{ display:flex; flex-wrap:wrap; gap: 1rem; margin-top: var(--space-4); }
+.btn{
+  font-family: var(--body); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 0.95rem 1.9rem; border-radius: 0; border: 1px solid var(--charcoal);
+  cursor:pointer; transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+  display:inline-block;
+}
+.btn-primary{ background: var(--charcoal); color: var(--ivory); border-color: var(--charcoal); }
+.btn-primary:hover{ background: var(--ochre); border-color: var(--ochre); }
+.btn-outline{ border-color: color-mix(in oklch, var(--ivory) 55%, transparent); color: var(--ivory); }
+.btn-outline:hover{ border-color: var(--ochre); color: var(--ochre); }
+.btn-dark{ background: var(--charcoal); color: var(--ivory); border-color: var(--charcoal); }
+.btn-dark:hover{ background: var(--ochre); border-color: var(--ochre); }
+.hero .btn-primary, .hero .btn-dark{ background: var(--ivory); color: var(--charcoal); border-color: var(--ivory); }
+.hero .btn-primary:hover, .hero .btn-dark:hover{ background: var(--ochre); color: var(--ivory); border-color: var(--ochre); }
+
+.scroll-cue{
+  position:absolute; bottom: var(--space-3); left: 50%; transform: translateX(-50%);
+  z-index:2; color: var(--ivory); opacity: 0.75; display:flex; flex-direction:column; align-items:center; gap:.5rem;
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.scroll-cue .line{ width:1px; height: 34px; background: color-mix(in oklch, var(--ivory) 60%, transparent); overflow:hidden; }
+.scroll-cue .line::after{ content:''; display:block; width:100%; height:40%; background: var(--gold); animation: drip 2.4s ease-in-out infinite; }
+@keyframes drip{ 0%{ transform: translateY(-100%);} 100%{ transform: translateY(250%);} }
+
+/* ============ INTRO ============ */
+.intro{ padding: var(--space-7) 0; text-align:center; }
+.intro-mark{ width: 34px; height:34px; margin: 0 auto var(--space-3); color: var(--ochre); }
+.intro h2{
+  font-size: clamp(1.8rem, 4vw, 3.1rem); max-width: 16ch; margin: 0 auto;
+}
+.intro h2 em{ font-style: italic; color: var(--slate); font-weight:500; display:block; margin-top: .35rem; }
+.intro-text{
+  max-width: 620px; margin: var(--space-4) auto 0; color: var(--slate);
+  font-size: 1.05rem; line-height: 1.9;
+}
+
+/* divider */
+.divider{ display:flex; align-items:center; justify-content:center; gap: var(--space-2); margin: 0 auto; width: fit-content; }
+.divider svg{ width: 64px; height: 14px; color: var(--ochre); opacity:.8; }
+
+/* ============ JOURNEY ============ */
+.journey{ position: relative; background: var(--parchment); }
+.journey-head{ text-align:center; max-width: 640px; margin: 0 auto var(--space-6); padding-top: var(--space-2); }
+.journey-head h2{ font-size: clamp(1.8rem, 3.6vw, 2.8rem); margin-top: .5rem; }
+.journey-head p{ color: var(--slate); margin-top: var(--space-2); }
+
+.journey-path{ position: relative; max-width: 880px; margin: 0 auto; }
+.journey-path svg.spine{
+  position:absolute; left: 27px; top:0; bottom:0; width: 3px; height: 100%;
+}
+@media(min-width:760px){ .journey-path svg.spine{ left: 50%; margin-left:-1.5px; } }
+.spine-line{ stroke: var(--stone); stroke-width: 2; fill:none; }
+.spine-fill{ stroke: var(--ochre); stroke-width: 2; fill:none; stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--ease); }
+.spine-fill.in{ stroke-dashoffset: 0; }
+
+.waypoint{
+  position: relative; display:grid; grid-template-columns: 56px 1fr; gap: 1.2rem;
+  padding: var(--space-3) 0 var(--space-5); align-items:start;
+}
+@media(min-width:760px){
+  .waypoint{ grid-template-columns: 1fr 56px 1fr; gap: var(--space-4); }
+  .waypoint .wp-num{ grid-column: 2; justify-self:center; }
+  .waypoint .wp-card{ grid-column: 1; }
+  .waypoint:nth-child(even) .wp-card{ grid-column: 3; }
+  .waypoint .wp-spacer{ grid-column: 3; }
+  .waypoint:nth-child(even) .wp-spacer{ grid-column: 1; }
+}
+.wp-num{
+  width: 56px; height:56px; border-radius:50%; background: var(--ivory); border: 1px solid var(--stone);
+  display:flex; align-items:center; justify-content:center; font-family: var(--display); font-size:1.1rem; color: var(--ochre);
+  z-index:2; flex-shrink:0;
+}
+.wp-card{ }
+.wp-stage{ font-size: 0.7rem; letter-spacing: 0.2em; text-transform:uppercase; color: var(--ochre); font-weight:600; margin-bottom: .4rem; }
+.wp-card h3{ font-size: 1.5rem; margin-bottom: .5rem; }
+.wp-card p{ color: var(--slate); font-size: 0.96rem; margin-bottom: 1rem; }
+.wp-card .wp-img{ border-radius: var(--radius-m); overflow:hidden; aspect-ratio: 4/3; }
+.wp-card .wp-img img{ width:100%; height:100%; object-fit:cover; transition: transform 900ms var(--ease); }
+.wp-card:hover .wp-img img{ transform: scale(1.04); }
+
+/* ============ CHAPTERS ============ */
+.chapters{ }
+.chapters-head{ display:flex; flex-direction:column; gap: .6rem; margin-bottom: var(--space-5); max-width: 640px; }
+.chapters-head h2{ font-size: clamp(1.9rem, 4vw, 3rem); }
+.chapters-intro{ color: var(--slate); font-size: 1rem; line-height: 1.7; }
+
+.chapter-index{ max-width: 880px; }
+.ci-row{
+  display:grid; grid-template-columns: 40px 1fr; gap: 1.2rem;
+  padding: 1.6rem 0; border-top: 1px solid var(--stone); align-items:start;
+}
+.ci-row.has-img{ grid-template-columns: 40px 84px 1fr; }
+.ci-row:last-of-type{ border-bottom: 1px solid var(--stone); }
+.ci-num{ font-family: var(--display); font-size: 1.15rem; color: var(--ochre); letter-spacing: .04em; padding-top: .1rem; }
+.ci-thumb{ width: 84px; height: 84px; border-radius: var(--radius-m); overflow:hidden; flex-shrink:0; }
+.ci-thumb img{ width:100%; height:100%; object-fit:cover; }
+.ci-body h3{ font-size: 1.25rem; margin-bottom: .4rem; }
+.ci-body p{ color: var(--slate); font-size: 0.94rem; max-width: 58ch; }
+.ci-divider{
+  padding: 2.2rem 0 1.8rem; margin: .5rem 0; border-top: 1px solid var(--ochre-dim); border-bottom: 1px solid var(--ochre-dim);
+  text-align:center;
+}
+.ci-divider-label{ font-size: 0.7rem; letter-spacing: 0.22em; text-transform:uppercase; color: var(--ochre); font-weight:600; }
+.ci-divider h3{ font-family: var(--display); font-style: italic; font-size: 1.4rem; margin: .5rem 0 .5rem; }
+.ci-divider p{ color: var(--slate); max-width: 52ch; margin: 0 auto; font-size: 0.95rem; }
+.ci-note{ text-align:center; color: var(--slate); font-size: 0.85rem; font-style: italic; margin-top: var(--space-3); }
+.chapter{
+  display:grid; grid-template-columns: 1fr; gap: var(--space-3);
+  padding: var(--space-4) 0; border-top: 1px solid var(--stone);
+  align-items:center;
+}
+.chapter:last-child{ border-bottom: 1px solid var(--stone); }
+@media(min-width:860px){ .chapter{ grid-template-columns: 100px 1fr 260px; gap: var(--space-4); } }
+.chapter-num{ font-family: var(--display); font-size: 0.95rem; color: var(--ochre); letter-spacing:.06em; }
+.chapter-body h3{ font-size: clamp(1.35rem, 2.4vw, 1.9rem); margin-bottom: .55rem; }
+.chapter-body p{ color: var(--slate); max-width: 56ch; }
+.chapter-img{ aspect-ratio: 3/4; border-radius: var(--radius-m); overflow:hidden; }
+.chapter-img img{ width:100%; height:100%; object-fit:cover; filter: saturate(0.94); transition: transform 900ms var(--ease); }
+.chapter:hover .chapter-img img{ transform: scale(1.05); }
+
+/* ============ FULL QUOTE ============ */
+.quote-block{
+  position: relative; min-height: 62vh; display:flex; align-items:center; justify-content:center;
+  padding: var(--space-6) clamp(1.25rem,6vw,4rem); overflow:hidden;
+}
+.quote-block img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.quote-block::after{ content:''; position:absolute; inset:0; background: rgba(18,14,10,0.42); }
+.quote-block blockquote{
+  position:relative; z-index:2; color: var(--ivory); text-align:center; max-width: 780px;
+  font-family: var(--display); font-style: italic; font-weight: 400;
+  font-size: clamp(1.4rem, 3.4vw, 2.4rem); line-height: 1.45;
+}
+.quote-block cite{ position:relative; z-index:2; display:block; margin-top: var(--space-3); font-style: normal; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+
+/* ============ GALLERY ============ */
+.gallery-head{ max-width: 640px; margin-bottom: var(--space-5); }
+.gallery-head h2{ font-size: clamp(1.9rem, 4vw, 3rem); }
+.gallery-grid{
+  display:grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-2);
+}
+.g-item{ border-radius: var(--radius-m); overflow:hidden; position:relative; }
+.g-item img{ width:100%; height:100%; object-fit:cover; transition: transform 900ms var(--ease); }
+.g-item:hover img{ transform: scale(1.045); }
+.g-item.a{ grid-column: span 4; grid-row: span 2; aspect-ratio: 5/4; }
+.g-item.b{ grid-column: span 2; aspect-ratio: 3/4; }
+.g-item.c{ grid-column: span 2; aspect-ratio: 3/4; }
+.g-item.d{ grid-column: span 3; aspect-ratio: 4/5; }
+.g-item.e{ grid-column: span 3; aspect-ratio: 4/5; }
+.g-item.f{ grid-column: span 6; aspect-ratio: 16/7; }
+@media(max-width: 760px){
+  .gallery-grid{ grid-template-columns: repeat(2,1fr); }
+  .g-item.a,.g-item.f{ grid-column: span 2; }
+  .g-item.b,.g-item.c,.g-item.d,.g-item.e{ grid-column: span 1; aspect-ratio: 3/4; }
+}
+
+/* ============ AUTHOR ============ */
+.author{ background: var(--slate); color: var(--ivory); }
+.author-grid{ display:grid; grid-template-columns: 1fr; gap: var(--space-5); align-items:center; }
+@media(min-width: 860px){ .author-grid{ grid-template-columns: 0.85fr 1fr; gap: var(--space-6); } }
+.author-portrait{ aspect-ratio: 4/5; border-radius: var(--radius-m); overflow:hidden; }
+.author-portrait img{ width:100%; height:100%; object-fit:cover; }
+.author-text .eyebrow{ color: var(--gold); }
+.author-text h2{ font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin: .6rem 0 var(--space-3); color: var(--ivory); }
+.author-text p{ color: color-mix(in oklch, var(--ivory) 82%, transparent); margin-bottom: 1.1rem; max-width: 56ch; }
+.author-sign{ font-family: var(--display); font-style: italic; font-size: 1.15rem; margin-top: var(--space-3); color: var(--gold); }
+
+/* ============ BOOK ============ */
+.book{ }
+.book-grid{ display:grid; grid-template-columns: 1fr; gap: var(--space-5); align-items:center; }
+@media(min-width: 860px){ .book-grid{ grid-template-columns: 0.9fr 1.1fr; gap: var(--space-6); } }
+.book-cover{ display:flex; justify-content:center; }
+.book-cover-inner{
+  width: min(340px, 80vw); aspect-ratio: 2/3; border-radius: var(--radius-s);
+  background: linear-gradient(180deg, rgba(20,16,12,0.15), rgba(10,10,10,0.65)), url('/la-montagna-che-portiamo-dentro/images/extra/book_cover_photo.jpg') center/cover no-repeat;
+  box-shadow: 0 30px 60px -20px rgba(20,16,12,0.35);
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-end; text-align:center; padding: 2.4rem 2rem;
+  border: 1px solid color-mix(in oklch, var(--gold) 40%, transparent);
+}
+.book-cover-inner .mark{ width: 46px; height:46px; color: var(--ochre); margin-bottom: 1.6rem; }
+.book-cover-inner h3{ color: var(--ivory); font-size: 1.4rem; line-height:1.3; }
+.book-cover-inner span{ color: var(--gold); font-family: var(--display); font-style: italic; font-size: 0.85rem; margin-top: 1rem; display:block; }
+.book-meta{ display:flex; flex-wrap:wrap; gap: var(--space-3) var(--space-4); margin: var(--space-4) 0; }
+.book-meta div{ min-width: 140px; }
+.book-meta .label{ font-size: 0.68rem; letter-spacing: 0.16em; text-transform:uppercase; color: var(--ochre); font-weight:600; margin-bottom:.3rem; }
+.book-meta .value{ font-family: var(--display); font-size: 1.05rem; }
+.book-text h2{ font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin-bottom: var(--space-3); }
+.book-text p{ color: var(--slate); max-width: 56ch; margin-bottom: var(--space-3); }
+.book-ctas{ display:flex; gap:1rem; flex-wrap:wrap; margin-top: var(--space-3); }
+
+.download-form{ position:relative; margin-top: var(--space-3); }
+.download-label{ display:block; font-size: 0.78rem; letter-spacing: 0.06em; color: var(--slate); margin-bottom: .7rem; }
+.download-row{ display:flex; gap: .7rem; flex-wrap:wrap; }
+.download-row input[type="email"]{
+  flex: 1 1 220px; font-family: var(--body); font-size: 0.95rem; padding: 0.9rem 1.1rem;
+  border: 1px solid var(--stone); border-radius: var(--radius-s); background: var(--ivory); color: var(--ink);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.download-row input[type="email"]:focus{ outline:none; border-color: var(--ochre); }
+.download-row .btn{ border:none; }
+.download-msg{ margin-top: .8rem; font-size: 0.86rem; min-height: 1.2em; }
+.download-msg.ok{ color: var(--teal); }
+.download-msg.err{ color: var(--terracotta); }
+
+/* ============ SOCIAL ============ */
+.social-head{ max-width: 640px; margin-bottom: var(--space-5); }
+.social-head h2{ font-size: clamp(1.9rem, 4vw, 3rem); }
+.social-scroll{ display:flex; gap: var(--space-2); overflow-x:auto; padding-bottom: var(--space-2); scrollbar-width: thin; }
+.s-card{
+  flex: 0 0 auto; width: 280px; border-radius: var(--radius-m); overflow:hidden; background: var(--parchment);
+  border: 1px solid var(--stone); transition: transform var(--dur-fast) var(--ease);
+}
+.s-card:hover{ transform: translateY(-3px); }
+.s-card .s-img{ aspect-ratio: 1/1; overflow:hidden; }
+.s-card .s-img img{ width:100%; height:100%; object-fit:cover; }
+.s-body{ padding: 1.1rem 1.2rem 1.3rem; }
+.s-plat{ font-size: 0.65rem; letter-spacing: 0.16em; text-transform:uppercase; color: var(--ochre); font-weight:600; margin-bottom:.5rem; }
+.s-quote{ font-family: var(--display); font-style: italic; font-size: 1rem; line-height:1.5; margin-bottom: .6rem; }
+.s-chap{ font-size: 0.78rem; color: var(--slate); }
+
+/* ============ CTA FINAL ============ */
+.cta-final{ text-align:center; background: var(--charcoal); color: var(--ivory); }
+.cta-final .divider svg{ color: var(--gold); }
+.cta-final h2{ font-size: clamp(2rem, 4.4vw, 3.4rem); margin: var(--space-2) 0 var(--space-3); }
+.cta-final p{ max-width: 520px; margin: 0 auto var(--space-4); color: color-mix(in oklch, var(--ivory) 78%, transparent); }
+.cta-final .hero-ctas{ justify-content:center; margin-top:0; }
+
+/* ============ FOOTER ============ */
+footer{ background: var(--parchment); padding: var(--space-5) 0 var(--space-3); }
+.footer-top{ display:grid; grid-template-columns: 1fr; gap: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid var(--stone); }
+@media(min-width:760px){ .footer-top{ grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+.footer-brand{ display:flex; align-items:center; gap:.6rem; margin-bottom: .8rem; }
+.footer-brand svg{ width:26px; height:26px; color: var(--ochre); }
+.footer-brand span{ font-family: var(--display); font-size: 1rem; }
+footer .book-name{ color: var(--slate); font-size:0.9rem; max-width: 32ch; }
+.footer-col h4{ font-size: 0.7rem; letter-spacing: 0.16em; text-transform:uppercase; color: var(--ochre); margin-bottom: 1rem; font-weight:600; }
+.footer-col a{ display:block; color: var(--slate); font-size: 0.9rem; margin-bottom: .65rem; }
+.footer-col a:hover{ color: var(--charcoal); }
+.footer-bottom{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; padding-top: var(--space-3); font-size: 0.78rem; color: var(--slate); }
+.footer-bottom .legal{ display:flex; gap: 1.4rem; }
+
+@media(max-width:600px){
+  .section{ padding: var(--space-5) 0; }
+  .intro{ padding: var(--space-5) 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a href="#top" class="logo" aria-label="La Montagna Che Portiamo Dentro — home">
+    <img src="/la-montagna-che-portiamo-dentro/images/extra/shamanic-logo.png" alt="Shamanic Travels" class="logo-img">
+    <span class="logo-word">La Montagna Che Portiamo Dentro</span>
+  </a>
+  <div class="nav-links">
+    <a href="#libro">Il Libro</a>
+    <a href="#viaggio">Il Viaggio</a>
+    <a href="#capitoli">I Capitoli</a>
+    <a href="#autore">L'Autore</a>
+    <a href="#galleria">Galleria</a>
+    <a href="#scarica" class="cta-link">Scarica il libro</a>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#libro">Il Libro</a>
+  <a href="#viaggio">Il Viaggio</a>
+  <a href="#capitoli">I Capitoli</a>
+  <a href="#autore">L'Autore</a>
+  <a href="#galleria">Galleria</a>
+  <a href="#scarica">Scarica il libro</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-media">
+    <img src="/la-montagna-che-portiamo-dentro/images/hero_mountain_sunrise.png" alt="Viandante in piedi su una roccia di fronte a una vetta andina avvolta nella luce dell'alba" loading="eager">
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Un libro di viaggio interiore</p>
+    <h1>La Montagna<br>Che Portiamo<br>Dentro</h1>
+    <p class="hero-sub">Un viaggio tra le vette delle Ande e i sentieri dell'anima.</p>
+    <div class="hero-ctas">
+      <a href="#viaggio" class="btn btn-primary">Inizia il viaggio</a>
+      <a href="#libro" class="btn btn-outline">Scopri il libro</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span>Scendi</span><span class="line"></span></div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<section class="intro container reveal">
+  <svg class="intro-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 26L14 10L20 19L24 13L36 30" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+  </svg>
+  <h2>La montagna non è soltanto davanti a noi.<em>È anche dentro di noi.</em></h2>
+  <p class="intro-text">Ogni vetta che si attraversa nel mondo esterno ha una gemella silenziosa nel mondo interiore: un passo scosceso, un respiro corto, una vista che si apre solo dopo la fatica. Questo libro nasce da anni cammino sulle Ande peruviane — tra Cusco, la Valle Sacra e i sentieri che portano oltre le nuvole — e da un'altra ascesa, più lenta e meno visibile, compiuta un passo alla volta dentro di sé.</p>
+</section>
+
+<div class="divider reveal" aria-hidden="true">
+  <svg viewBox="0 0 64 14"><path d="M0 7H24M40 7H64" stroke="currentColor" stroke-width="1"/><path d="M28 12L32 2L36 12" stroke="currentColor" stroke-width="1" fill="none" stroke-linejoin="round"/></svg>
+</div>
+
+<!-- ============ JOURNEY ============ -->
+<section class="journey section" id="viaggio">
+  <div class="container">
+    <div class="journey-head reveal">
+      <p class="eyebrow">Il viaggio</p>
+      <h2>Sette tappe verso la vetta interiore</h2>
+      <p>La struttura del libro segue il ritmo naturale di un'ascesa: dalla partenza all'incontro con la montagna, fino al ritorno — che non è mai il punto di partenza.</p>
+    </div>
+
+    <div class="journey-path">
+      <svg class="spine" preserveAspectRatio="none" viewBox="0 0 3 100" aria-hidden="true">
+        <path class="spine-line" d="M1.5 0 L1.5 100"/>
+        <path class="spine-fill" id="spineFill" pathLength="1" d="M1.5 0 L1.5 100"/>
+      </svg>
+
+      <div class="waypoint reveal">
+        <div class="wp-num">01</div>
+        <div class="wp-card">
+          <p class="wp-stage">Partenza</p>
+          <h3>Cusco, la soglia</h3>
+          <p>Il viaggio inizia dove l'altitudine toglie il fiato e i pensieri, prima ancora dei passi. Cusco come porta, non come meta.</p>
+          <div class="wp-img"><img src="/la-montagna-che-portiamo-dentro/images/extra/cusco_sunset.jpg" alt="Cusco al tramonto vista dall'alto" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="waypoint reveal">
+        <div class="wp-num">02</div>
+        <div class="wp-card">
+          <p class="wp-stage">Valle</p>
+          <h3>La Valle Sacra</h3>
+          <p>Tra le terrazze di Pisac e i campi coltivati da secoli, il corpo impara di nuovo il ritmo lento della terra.</p>
+          <div class="wp-img"><img src="/la-montagna-che-portiamo-dentro/images/hero_sacred_valley.png" alt="Terrazze agricole della Valle Sacra degli Inca al tramonto, con il fiume che serpeggia a valle" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="waypoint reveal">
+        <div class="wp-num">03</div>
+        <div class="wp-card">
+          <p class="wp-stage">Ascesa</p>
+          <h3>Il sentiero che sale</h3>
+          <p>Ogni passo in salita è una domanda che il corpo pone alla mente. Le Ande non perdonano la fretta.</p>
+          <div class="wp-img"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop" alt="Sentiero di montagna che sale tra le nuvole" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="waypoint reveal">
+        <div class="wp-num">04</div>
+        <div class="wp-card">
+          <p class="wp-stage">Silenzio</p>
+          <h3>Oltre le nuvole</h3>
+          <p>In quota il rumore del mondo si dirada. Resta solo il vento, la pietra e una domanda che non si era mai posta prima.</p>
+          <div class="wp-img"><img src="/la-montagna-che-portiamo-dentro/images/hero_lake_reflection.png" alt="Catena montuosa innevata che si specchia in un lago immobile all'alba" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="waypoint reveal">
+        <div class="wp-num">05</div>
+        <div class="wp-card">
+          <p class="wp-stage">Incontro</p>
+          <h3>Chi cammina con te</h3>
+          <p>Guide, custodi delle Ande, viandanti sconosciuti: ogni incontro lungo il cammino restituisce un frammento di sé.</p>
+          <div class="wp-img"><img src="/la-montagna-che-portiamo-dentro/images/hero_spiritual_journey.png" alt="Figura solitaria che sale una scalinata di pietra avvolta nella nebbia tra la vegetazione di montagna" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="waypoint reveal">
+        <div class="wp-num">06</div>
+        <div class="wp-card">
+          <p class="wp-stage">Trasformazione</p>
+          <h3>Ciò che resta in quota</h3>
+          <p>Non tutto ciò che si porta in montagna torna a valle. Alcune cose vanno lasciate lì, tra le pietre.</p>
+          <div class="wp-img"><img src="/la-montagna-che-portiamo-dentro/images/hero_ancient_stones.png" alt="Dettaglio ravvicinato di un muro in pietra incaica, con i blocchi levigati dalla luce radente" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="waypoint reveal">
+        <div class="wp-num">07</div>
+        <div class="wp-card">
+          <p class="wp-stage">Ritorno</p>
+          <h3>La discesa, diversa</h3>
+          <p>Si torna sempre a valle diversi da come si è saliti. Il ritorno è la vera prova della montagna interiore.</p>
+          <div class="wp-img"><img src="https://images.unsplash.com/photo-1521292270410-a8c4d716d518?q=80&w=1200&auto=format&fit=crop" alt="Sentiero di discesa al tramonto tra le Ande" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTERS ============ -->
+<section class="chapters section container" id="capitoli">
+  <div class="chapters-head reveal">
+    <p class="eyebrow">Indice</p>
+    <h2>I capitoli</h2>
+    <p class="chapters-intro">Venticinque capitoli, un'unica ascesa: dal bambino che non sapeva stare fermo fino alla chiamata delle Ande, e dai luoghi sacri degli Inca fino al ritorno a sé stessi.</p>
+  </div>
+
+  <div class="chapter-index reveal">
+
+    <div class="ci-row has-img">
+      <span class="ci-num">01</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_01.jpg" alt="Capitolo 01" loading="lazy"></div>
+      <div class="ci-body"><h3>Il bambino che non sapeva stare fermo</h3><p>L'infanzia di un bambino troppo sensibile, troppo curioso, troppo diverso per un mondo che non aveva ancora un linguaggio per descriverlo.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">02</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_02.jpg" alt="Capitolo 02" loading="lazy"></div>
+      <div class="ci-body"><h3>La casa dove imparò a resistere</h3><p>Una famiglia complessa, un padre distante, una madre ferita — e la scoperta precoce che l'amore, a volte, ha delle condizioni.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">03</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_03.jpg" alt="Capitolo 03" loading="lazy"></div>
+      <div class="ci-body"><h3>Il peso invisibile delle aspettative</h3><p>Come un bambino impara a costruirsi una maschera pur di essere accettato, e cosa si perde nel processo.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">04</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_04.jpg" alt="Capitolo 04" loading="lazy"></div>
+      <div class="ci-body"><h3>La ribellione del guerriero</h3><p>Il karate come prima palestra dell'identità: la disciplina che diventa corazza, la forza che diventa convinzione.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">05</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_05.jpg" alt="Capitolo 05" loading="lazy"></div>
+      <div class="ci-body"><h3>La montagna promessa</h3><p>La scalata comincia: studiare, crescere, dimostrare — la vetta come unico luogo dove finalmente sentirsi abbastanza.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">06</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_06.jpg" alt="Capitolo 06" loading="lazy"></div>
+      <div class="ci-body"><h3>Quando la montagna comincia a salire</h3><p>La sensibilità infantile diventa strumento professionale: osservare, capire, leggere le persone prima degli altri.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">07</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_07.jpg" alt="Capitolo 07" loading="lazy"></div>
+      <div class="ci-body"><h3>La conquista della vetta</h3><p>Il successo arriva davvero — formazione, PNL, migliaia di persone aiutate a cambiare. Ma in cima si affaccia una prima domanda.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">08</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_08.jpg" alt="Capitolo 08" loading="lazy"></div>
+      <div class="ci-body"><h3>Quando la vetta non basta</h3><p>Una carriera internazionale costruita pezzo per pezzo, e la scoperta che nessun risultato esterno risolve una domanda interna.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">09</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_09.jpg" alt="Capitolo 09" loading="lazy"></div>
+      <div class="ci-body"><h3>Il giorno in cui la vetta rimase vuota</h3><p>La perdita del padre, la fine di una storia lunga sedici anni: due fratture che aprono la strada a una ricerca diversa.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">10</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_10.jpg" alt="Capitolo 10" loading="lazy"></div>
+      <div class="ci-body"><h3>La chiamata delle Ande</h3><p>Dopo una vita passata a scalare l'esterno, arriva la chiamata a un viaggio mai davvero intrapreso prima: quello verso sé stessi.</p></div>
+    </div>
+
+    <div class="ci-divider">
+      <span class="ci-divider-label">Prefazione</span>
+      <h3>Il Privilegio dell'Ascolto</h3>
+      <p>Le Ande non si visitano: si ascoltano. L'ingresso nella seconda parte del viaggio, tra geografia sacra e cosmologia andina.</p>
+    </div>
+
+    <div class="ci-row has-img">
+      <span class="ci-num">11</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_11.jpg" alt="Capitolo 11" loading="lazy"></div>
+      <div class="ci-body"><h3>Cusco: L'Ombelico del Mondo</h3><p>Qusqu, il centro cosmologico del Tawantinsuyu — dove ogni viaggio di trasformazione deve prima tornare, al proprio centro.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">12</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_12.jpg" alt="Capitolo 12" loading="lazy"></div>
+      <div class="ci-body"><h3>Sacsayhuamán: Il Trono dell'Impero</h3><p>Blocchi di cento tonnellate incastrati senza malta — e la domanda che la pietra pone a chi si ferma davanti a lei: chi sei, senza ciò che hai costruito?</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">13</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_13.jpg" alt="Capitolo 13" loading="lazy"></div>
+      <div class="ci-body"><h3>La Valle Sacra: Il Corridoio Celeste degli Inca</h3><p>Tambomachay, Puka Pukara, Qenqo, Moray e le Saline di Maras — le tappe di purificazione prima della soglia più profonda.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">14</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_14.jpg" alt="Capitolo 14" loading="lazy"></div>
+      <div class="ci-body"><h3>Pisac: La Città delle Stelle</h3><p>Terrazzamenti curvilinei e mille tombe scavate nella roccia — il luogo dove la conoscenza arriva attraverso la relazione, non la conquista.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">15</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_15.jpg" alt="Capitolo 15" loading="lazy"></div>
+      <div class="ci-body"><h3>Ollantaytambo: La Fortezza Vivente degli Inca</h3><p>L'unica vittoria militare inca contro gli spagnoli, e la lezione più profonda delle Ande: la vera forza nasce dall'armonia, non dalla conquista.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">16</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_16.jpg" alt="Capitolo 16" loading="lazy"></div>
+      <div class="ci-body"><h3>Machu Picchu: La Città Perduta tra le Nuvole</h3><p>La sintesi di tutto il cammino: un luogo che non chiede di essere conquistato, ma ascoltato.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">17</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_17.jpg" alt="Capitolo 17" loading="lazy"></div>
+      <div class="ci-body"><h3>Humantay: Il Lago degli Apu</h3><p>Un lago turchese a 4.200 metri, ai piedi del Salkantay — il primo luogo del viaggio che il sacro non deve costruirlo: lo è già.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">18</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_18.jpg" alt="Capitolo 18" loading="lazy"></div>
+      <div class="ci-body"><h3>Palcoyo: La Montagna dei Sette Colori</h3><p>La controparte silenziosa della più celebre Vinicunca — la lezione della contemplazione senza spettacolo.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">19</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_19.jpg" alt="Capitolo 19" loading="lazy"></div>
+      <div class="ci-body"><h3>Il Lago Titicaca: Dove Nacque il Sole degli Inca</h3><p>La culla mitologica del Tawantinsuyu, con una sosta ad Amantaní: l'accoglienza silenziosa di una comunità che non deve dimostrare nulla.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">20</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_20.jpg" alt="Capitolo 20" loading="lazy"></div>
+      <div class="ci-body"><h3>Arequipa: La Città Bianca</h3><p>Tra i vulcani e la pietra di sillar, la lezione di portare il silenzio della montagna anche dentro le mura di una città.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">21</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_21.jpg" alt="Capitolo 21" loading="lazy"></div>
+      <div class="ci-body"><h3>Nazca: Le Linee del Mistero</h3><p>Geoglifi visibili solo dal cielo — un luogo che rifiuta di lasciarsi possedere del tutto dalla comprensione razionale.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">22</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_22.jpg" alt="Capitolo 22" loading="lazy"></div>
+      <div class="ci-body"><h3>Ica: Le Dune e il Deserto</h3><p>Una sosta che non chiede interpretazione, prima dell'ultimo tratto del cammino: quello della propria storia personale.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">23</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_23.jpg" alt="Capitolo 23" loading="lazy"></div>
+      <div class="ci-body"><h3>Quando tutto fu perduto</h3><p>Cajamarca, 1532: la caduta di un impero — e la soglia di morte che ogni racconto di trasformazione deve attraversare.</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">24</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_24.jpg" alt="Capitolo 24" loading="lazy"></div>
+      <div class="ci-body"><h3>La Notte più Lunga</h3><p>Il punto più basso del cammino, dove ogni identità costruita viene tolta e resta solo una domanda: chi sono, senza nulla da dimostrare?</p></div>
+    </div>
+    <div class="ci-row has-img">
+      <span class="ci-num">25</span>
+      <div class="ci-thumb"><img src="/la-montagna-che-portiamo-dentro/images/chapters/cap_25.jpg" alt="Capitolo 25" loading="lazy"></div>
+      <div class="ci-body"><h3>Il Ritorno del Bambino</h3><p>Il cerchio si chiude: quel bambino che non sapeva stare fermo aveva un nome. Marcello.</p></div>
+    </div>
+
+    <div class="ci-note">In arrivo: Conclusione — Il Richiamo delle Ande, Il Viaggio Continua, Bibliografia e Fonti Storiche.</div>
+  </div>
+</section>
+
+<!-- ============ QUOTE 1 ============ -->
+<div class="quote-block">
+  <img src="/la-montagna-che-portiamo-dentro/images/hero_spiritual_journey.png" alt="Figura solitaria che sale una scalinata di pietra tra la nebbia" loading="lazy">
+  <blockquote>&ldquo;Ogni montagna che attraversiamo ci restituisce una parte di noi.&rdquo;</blockquote>
+  <cite>La Montagna Che Portiamo Dentro</cite>
+</div>
+
+<!-- ============ GALLERY ============ -->
+<section class="section container" id="galleria">
+  <div class="gallery-head reveal">
+    <p class="eyebrow">Galleria</p>
+    <h2>Le Ande, in immagini</h2>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="g-item a"><img src="/la-montagna-che-portiamo-dentro/images/hero_mountain_sunrise.png" alt="Viandante di fronte a una vetta andina all'alba" loading="lazy"></div>
+    <div class="g-item b"><img src="/la-montagna-che-portiamo-dentro/images/hero_ancient_stones.png" alt="Muro in pietra incaica" loading="lazy"></div>
+    <div class="g-item c"><img src="/la-montagna-che-portiamo-dentro/images/hero_spiritual_journey.png" alt="Scalinata di pietra tra la nebbia" loading="lazy"></div>
+    <div class="g-item d"><img src="/la-montagna-che-portiamo-dentro/images/hero_sacred_valley.png" alt="Terrazze della Valle Sacra al tramonto" loading="lazy"></div>
+    <div class="g-item e"><img src="/la-montagna-che-portiamo-dentro/images/hero_lake_reflection.png" alt="Montagne innevate riflesse in un lago" loading="lazy"></div>
+    <div class="g-item f"><img src="/la-montagna-che-portiamo-dentro/images/hero_sacred_valley.png" alt="Veduta panoramica della Valle Sacra con il fiume e le montagne innevate" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ QUOTE 2 ============ -->
+<div class="quote-block">
+  <img src="/la-montagna-che-portiamo-dentro/images/hero_ancient_stones.png" alt="Dettaglio di un muro in pietra incaica illuminato dalla luce calda del tramonto" loading="lazy">
+  <blockquote>&ldquo;Non si scala una montagna per conquistarla, ma per lasciarsi attraversare da lei.&rdquo;</blockquote>
+  <cite>La Montagna Che Portiamo Dentro</cite>
+</div>
+
+<!-- ============ AUTHOR ============ -->
+<section class="author section" id="autore">
+  <div class="container author-grid">
+    <div class="author-portrait reveal">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1000&auto=format&fit=crop" alt="Ritratto dell'autore tra le montagne andine" loading="lazy">
+    </div>
+    <div class="author-text reveal">
+      <p class="eyebrow">L'autore</p>
+      <h2>Una vita tra Cusco e le Ande</h2>
+      <p>L'autore vive e lavora tra le montagne di Cusco, dove accompagna viaggiatori lungo i sentieri delle Ande e dell'Amazzonia da anni. Da questa pratica quotidiana — fatta di sentieri, altitudine e incontri — nasce l'esigenza di scrivere non una guida, ma un diario dell'anima.</p>
+      <p>La montagna, per lui, non è mai stata soltanto un paesaggio da attraversare: è un maestro silenzioso, capace di restituire a chi la percorre con attenzione una versione più autentica di sé.</p>
+      <p class="author-sign">— Dalle prime pagine del libro</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section class="book section container" id="libro">
+  <div class="book-grid">
+    <div class="book-cover reveal">
+      <div class="book-cover-inner">
+        <svg class="mark" viewBox="0 0 40 40" fill="none"><path d="M4 26L14 10L20 19L24 13L36 30" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <h3>La Montagna<br>Che Portiamo Dentro</h3>
+        <span>Un viaggio tra le vette delle Ande<br>e i sentieri dell'anima</span>
+      </div>
+    </div>
+    <div class="book-text reveal">
+      <p class="eyebrow">Il libro</p>
+      <h2>Un diario di viaggio, tra le vette e l'anima</h2>
+      <p>Cinque capitoli, sette tappe, un'unica ascesa. La Montagna Che Portiamo Dentro accompagna il lettore attraverso la geografia reale delle Ande peruviane — Cusco, la Valle Sacra, Pisac — e attraverso la geografia interiore che ogni cammino, se vissuto con attenzione, finisce per rivelare.</p>
+      <div class="book-meta">
+        <div><div class="label">Formato</div><div class="value">PDF gratuito</div></div>
+        <div><div class="label">Accesso</div><div class="value">Via email</div></div>
+        <div><div class="label">Lingua</div><div class="value">Italiano</div></div>
+        <div><div class="label">Capitoli</div><div class="value">5</div></div>
+      </div>
+
+      <form class="download-form" id="downloadForm" novalidate aria-describedby="scarica"><span id="scarica" style="position:absolute; margin-top:-6rem;" aria-hidden="true"></span>
+        <label for="dl-email" class="download-label">Ricevi il libro gratuitamente via email</label>
+        <div class="download-row">
+          <input type="email" id="dl-email" name="email" placeholder="La tua email" required autocomplete="email">
+          <button type="submit" class="btn btn-primary">Scarica il libro</button>
+        </div>
+        <p class="download-msg" id="downloadMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL ============ -->
+<section class="section container">
+  <div class="social-head reveal">
+    <p class="eyebrow">Segui il viaggio</p>
+    <h2>Frammenti dal libro</h2>
+  </div>
+  <div class="social-scroll reveal">
+    <div class="s-card">
+      <div class="s-img"><img src="/la-montagna-che-portiamo-dentro/images/extra/cusco_sunset_small.jpg" alt="Cusco al tramonto" loading="lazy"></div>
+      <div class="s-body"><p class="s-plat">Instagram</p><p class="s-quote">&ldquo;Cusco è la soglia, non la meta.&rdquo;</p><p class="s-chap">Capitolo I</p></div>
+    </div>
+    <div class="s-card">
+      <div class="s-img"><img src="https://images.unsplash.com/photo-1580889240912-c8d491481ff9?q=80&w=600&auto=format&fit=crop" alt="Terrazze della Valle Sacra" loading="lazy"></div>
+      <div class="s-body"><p class="s-plat">Pinterest</p><p class="s-quote">&ldquo;La terra ricorda ciò che noi dimentichiamo.&rdquo;</p><p class="s-chap">Capitolo II</p></div>
+    </div>
+    <div class="s-card">
+      <div class="s-img"><img src="https://images.unsplash.com/photo-1520962880247-cfaf541c8724?q=80&w=600&auto=format&fit=crop" alt="Montagna avvolta nella nebbia" loading="lazy"></div>
+      <div class="s-body"><p class="s-plat">Facebook</p><p class="s-quote">&ldquo;Gli Apu non parlano. Ascoltano.&rdquo;</p><p class="s-chap">Capitolo IV</p></div>
+    </div>
+    <div class="s-card">
+      <div class="s-img"><img src="https://images.unsplash.com/photo-1521292270410-a8c4d716d518?q=80&w=600&auto=format&fit=crop" alt="Sentiero al tramonto" loading="lazy"></div>
+      <div class="s-body"><p class="s-plat">LinkedIn</p><p class="s-quote">&ldquo;Si torna sempre diversi da come si è saliti.&rdquo;</p><p class="s-chap">Capitolo V</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-final section">
+  <div class="container">
+    <div class="divider reveal" aria-hidden="true">
+      <svg viewBox="0 0 64 14"><path d="M0 7H24M40 7H64" stroke="currentColor" stroke-width="1"/><path d="M28 12L32 2L36 12" stroke="currentColor" stroke-width="1" fill="none" stroke-linejoin="round"/></svg>
+    </div>
+    <h2 class="reveal">La montagna ti aspetta.</h2>
+    <p class="reveal">Ogni viaggio verso una vetta è anche un viaggio verso qualcosa che abbiamo dimenticato di noi stessi.</p>
+    <div class="hero-ctas reveal">
+      <a href="#viaggio" class="btn btn-primary">Inizia il viaggio</a>
+      <a href="#libro" class="btn btn-outline">Scopri il libro</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M4 26L14 10L20 19L24 13L36 30" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" style="color:var(--charcoal)"/><line x1="2" y1="30" x2="38" y2="30" stroke="var(--ochre)" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span>La Montagna Che Portiamo Dentro</span>
+        </div>
+        <p class="book-name">Un viaggio tra le vette delle Ande e i sentieri dell'anima.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Naviga</h4>
+        <a href="#libro">Il Libro</a>
+        <a href="#viaggio">Il Viaggio</a>
+        <a href="#capitoli">I Capitoli</a>
+        <a href="#autore">L'Autore</a>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Pinterest</a>
+        <a href="#">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <a href="mailto:marcello.buglione@gmail.com">marcello.buglione@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 La Montagna Che Portiamo Dentro. Tutti i diritti riservati.</span>
+      <div class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Termini</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  var onScroll = function(){
+    if(window.scrollY > 40){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+  };
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); });
+  });
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduced){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.14 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  var dlForm = document.getElementById('downloadForm');
+  if(dlForm){
+    dlForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var emailInput = document.getElementById('dl-email');
+      var msg = document.getElementById('downloadMsg');
+      var btn = dlForm.querySelector('button[type="submit"]');
+      var email = emailInput.value.trim();
+      msg.className = 'download-msg';
+      msg.textContent = '';
+
+      if(!email){ return; }
+
+      /* Tracking, coerente con lo stesso pattern usato su shamanictravels.com */
+      if(typeof fbq !== 'undefined'){ fbq('track', 'Lead', { content_name: 'La Montagna Che Portiamo Dentro' }); }
+      if(typeof gtag !== 'undefined'){ gtag('event', 'generate_lead', { event_category: 'ebook', event_label: 'la_montagna_che_portiamo_dentro' }); }
+
+      btn.disabled = true;
+      var originalLabel = btn.textContent;
+      btn.textContent = 'Invio...';
+
+      fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      })
+      .then(function(res){
+        if(!res.ok){ throw new Error('request-failed'); }
+        return res.json();
+      })
+      .then(function(data){
+        dlForm.reset();
+        window.location.href = '/la-montagna-che-portiamo-dentro/grazie';
+      })
+      .catch(function(){
+        msg.textContent = 'Qualcosa è andato storto. Riprova tra poco.';
+        msg.className = 'download-msg err';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      });
+    });
+  }
+
+  var spine = document.getElementById('spineFill');
+  if(spine && !reduced){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ spine.classList.add('in'); }
+      });
+    }, { threshold: 0.1 });
+    io2.observe(document.querySelector('.journey-path'));
+  } else if(spine){
+    spine.classList.add('in');
+  }
+})();
+</script>
+</body>
+</html>
+
+﻿
+
