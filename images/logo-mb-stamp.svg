@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 340" width="380" height="340">
+<style>
+.mb-serif{font-family:'Playfair Display', Georgia, 'Times New Roman', serif;}
+</style>
+<rect x="0" y="0" width="380" height="340" fill="#f5f1e8"/>
+<circle cx="190" cy="150" r="98" fill="none" stroke="#8b5d3b" stroke-width="1"/>
+<g opacity="0.3">
+<text x="135" y="205" text-anchor="middle" class="mb-serif" font-size="168" font-weight="700" fill="#8b5d3b">N</text>
+<text x="190" y="205" text-anchor="middle" class="mb-serif" font-size="168" font-weight="700" fill="#8b5d3b">L</text>
+<text x="245" y="205" text-anchor="middle" class="mb-serif" font-size="168" font-weight="700" fill="#8b5d3b">P</text>
+</g>
+<text x="190" y="195" text-anchor="middle" class="mb-serif" font-size="98" font-weight="500" fill="#171714">MB</text>
+<line x1="120" y1="255" x2="260" y2="255" stroke="#8b5d3b" stroke-width="0.5"/>
+<text x="190" y="278" text-anchor="middle" class="mb-serif" font-size="14" letter-spacing="3" fill="#171714">MARCELLO BUGLIONE</text>
+<text x="190" y="298" text-anchor="middle" class="mb-serif" font-size="10" letter-spacing="1.5" fill="#8b5d3b">NLP TRAINER · COACH · SANATORE ANDINO</text>
+</svg>
