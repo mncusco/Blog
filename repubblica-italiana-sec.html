@@ -20,7 +20,9 @@ a.src{font-size:11px;vertical-align:super;color:var(--accent);margin-left:2px;fo
 .endnote{margin-top:60px;border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font-size:14px}.back{margin-top:44px}
 .footer{max-width:var(--max);margin:auto;padding:38px 28px 55px;display:flex;justify-content:space-between;color:#77736a;font-size:12px;border-top:1px solid var(--line)}
 @media(max-width:700px){.links{display:none}.menu{display:block}.footer{display:block}.footer div+div{margin-top:10px}}
-</style></head>
+</style><link rel="stylesheet" href="dark-mode.css">
+<script>(function(){var t=localStorage.getItem("blog-theme");if(t==="dark"||t==="light"){document.documentElement.dataset.theme=t;}else if(window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.dataset.theme="dark";}}());</script>
+</head>
 <body>
 <header class="header"><nav class="nav"><a class="brand" href="index.html"><svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true" style="flex-shrink:0"><circle cx="50" cy="50" r="46" fill="none" stroke="#8b5d3b" stroke-width="2.5"/><g opacity="0.28"><text x="35" y="66" text-anchor="middle" font-family="&#39;Playfair Display&#39;,serif" font-size="48" font-weight="700" fill="#8b5d3b">N</text><text x="50" y="66" text-anchor="middle" font-family="&#39;Playfair Display&#39;,serif" font-size="48" font-weight="700" fill="#8b5d3b">L</text><text x="65" y="66" text-anchor="middle" font-family="&#39;Playfair Display&#39;,serif" font-size="48" font-weight="700" fill="#8b5d3b">P</text></g><text x="50" y="64" text-anchor="middle" font-family="&#39;Playfair Display&#39;,serif" font-size="36" font-weight="500" fill="#171714">MB</text></svg><span>Marcello Buglione</span></a><div class="links"><a href="index.html#articoli">Articoli</a><a href="index.html#pensiero">Pensiero</a><a href="index.html#esperienze">Esperienze</a><a href="coaching-one-to-one.html">Coaching</a><a href="index.html#chi-sono">Chi sono</a><a href="index.html#contatti">Contatti</a><a href="https://shamanictravels.com" target="_blank" rel="noopener">Shamanic Travels ↗</a></div><button class="menu" aria-label="Menu">☰</button></nav></header>
 <main class="article">
@@ -244,5 +246,6 @@ a.src{font-size:11px;vertical-align:super;color:var(--accent);margin-left:2px;fo
 </main>
 <footer class="footer"><div>© 2026 Marcello Buglione</div><div><a href="index.html">Home</a> · Articoli · Contatti</div></footer>
 <script>document.querySelector('.menu').onclick=e=>document.querySelector('.links').classList.toggle('open');</script>
+<script src="dark-mode.js"></script>
 </body>
 </html>
